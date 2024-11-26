@@ -2,102 +2,258 @@
 <html>
 
   <head>
-    <title>Alex Cabral - About</title>
-    <link rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display|Lato:300,400,700|Source+Sans+Pro:light">
-    <!-- fonts to play with:
-    Playfair Display + Lato or Source Sans Pro
-    Roboto + Montserrat
-    Google Sans (/helvetica neue) + Roboto (/helvetica neue) = default google look
-    check other recs on the google fonts site under these fonts
+    <title>Alex Cabral - Home</title>
+    <link rel = "stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display|Lato:300,400,700|Source+Sans+Pro:light" />
+    <link rel="shortcut icon" href="ACtransparent.png" type="image/png">
 
-    Format: family=Font+Name1|Font+Name2:weight1,weight2|Font+Name3:weight1
-    -->
+    <!-- Metadata declaration, mostly for SEO type stuff. Description is what will typically show up on search.-->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Alex Cabral, portfolio, personal website">
+    <meta name = "description" content="Alex Cabral is a UX Researcher on the Cloud Native Experiences team for Microsoft Azure, currently specializing in Linux and Open Source projects.">
+    <meta name = "author" content="Alex Cabral">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport helps scale for mobile devices more easily, avoid weird scrolling left issues-->
 
     <style>
+      
+      * { 
+        /*margin: 0;
+        padding: 1%;*/
+        box-sizing: border-box;
+      }
+
+      header {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.65em;
+        padding: 2% 2% 0% 2%; 
+      }
 
       h1 {
         font-family: 'Playfair Display', serif;
-        font-size: 48px;
+        /*font-size: 48px*/
+        font-size: 2.65em;
+      }
+
+      h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4em;
+      }
+
+      h3 {
+        font-family: 'Lato', sans-serif;
+        font-size: 1.15em;
       }
 
       body {
         font-family: 'Lato', sans-serif;
-        font-size: 18px;
+        font-size: 1.15em;
         font-weight: 300;
         margin: 0% 0% 0% 0%
       }
+      
+      .header-link {
+        color: #000000;
+        text-decoration: none;
+        /*margin: 0% 0%;
+        font-size: 1.2rem;*/
 
-      p {
-        /*margin: 1% 10% 0% 10%*/
+       /*font-family: 'Playfair Display', serif;
+        font-size: 2.65em;
+        padding: 2% 2% 0% 2%; */
       }
 
-      .intro {
-        margin: 0% 15% 0% 15%
+      /* SECTION CLASSES  */
+
+      .portfolio {
+        /* for spacing and responsiveness of project section */
+        display: flex;
+        /*flex-flow: row wrap;*/
+        flex-wrap: wrap;
+        /*justify-content: space-around;*/
+        justify-content: center;
+        /*padding: 0;
+        margin: 0;
+        list-style: none;*/
+        gap:20px;
       }
 
-      .profile {
-        width: 225px;
-        display: inline-table;
-        vertical-align: top;
+
+      /* DIV CLASSES */ 
+
+      .projects {
+        text-align: center;
+        margin: 0% 10% 3% 10%
       }
 
-      nav {
-        font-family: 'Lato', sans-serif;
+      /* Anchor tag must be block-level and take full size of child div */
+      .project-link {
+        display: block; /* Makes the <a> behave like a block container */
+        text-decoration: none; /* Remove underline from links */
+        width: 360px; /* Match the .project dimensions */
+        height: 285px;
+      }
+
+      .project {
+        /*display: block;*/
+        /*width: 360px; 
+        height: 285px;*/
+        width: 100%; 
+        height: 100%; 
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        border: 2px solid #c6d9e7; /* img border */ 
+        border-radius: 8px; /* how rounded the corners are */
+        overflow: hidden;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .project:hover {
+        transform: scale(1.03);
+        /*transition: transform 0.3s ease; -- moved to .project for debug purposes*/
+        border-color: #2E3532; /*#244f6e*/
+      }
+
+      .project-title {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        text-align: center;
+        font-size: 1.5rem; 
+        padding: 2%;
+      }
+
+
+
+      .top-nav {
+        list-style-type: none;
+        font-family: "Lato", sans-serif;
+        font-size: 1.1em;
         font-weight: 400;
         text-transform: uppercase;
-        /*color: #000000;*/
+        display: flex + safe;
+        background-color: #EEE;
+        padding: 0.75% 1% 0.75% 1%; 
+        text-align: center;
       }
 
-      a {
-        text-decoration: none;
-        color: #0576C7;
-        /*535353; 00a0db; 0576C7; 059fd8  */
-      }
-
-      a:hover {
-        text-decoration: underline;
-        color: #045187;
-        /*05c796; 06c730; 04bcde; 045187*/
-      }
-
-      ul {
-        list-style-type: none;
-        padding: 5% 0% 1% 0%
-      }
-
-      li {
-        display: inline;
+      .top-nav_items {
+        display: inline-flex;
         padding: 0% 4% 0% 4%;
-        /* top, right, bottom, left */
       }
 
+      .nav-link {
+        color: #0576C7;
+        text-decoration: none;
+        margin: 0% 0%;
+        font-size: 1.2rem;
+      }
+
+      .nav-link:hover {
+        color: #2E3532; /*#0078d7*/
+        text-decoration: underline;
+
+      }
+
+
+
+      .intro {
+        margin: 0% 10% 0% 10%
+      }
+
+
+      /* Responsive Design */
+
+      @media (max-width: 1200px) {
+        /*.project {
+          width: 400px;
+          height: 400px;
+        }*/
+        .project-link {
+          width: 300px;
+          height: 300px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        /*.project {
+          width: 300px;
+          height: 300px;
+        }*/
+        .project-link {
+          width: 300px;
+          height: 300px;
+        }
+      }
+      
+      @media (max-width: 680px) { /* 480px */ 
+        /*.project {
+          width: 100%;
+          aspect-ratio: 1; /* Maintain square shape on small screens 
+          height: auto; /* Ensure height adjusts 
+        }*/
+        .project-link {
+          width: 70%;
+          aspect-ratio: 1;
+          height: auto;
+        }
+      }
 
     </style>
   </head>
 
+
+
+
+
+
   <body>
+
+    <header id="site-header"> 
+      <a href = "index.html" class="header-link">
+        <center>Alex Cabral</center>
+      </a>
+    </header>
+    
+
     <nav>
       <center>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="AlexCabral_Resume.pdf">Résumé</a></li>
-          <li><a href="https://www.linkedin.com/in/alex-cabral-720b73135/">LinkedIn</a></li>
+        <ul class = "top-nav">
+          <li class = "top-nav_items"><a href="index.html" class = "nav-link">Home</a></li>
+          <li class = "top-nav_items"><a href="about.html" class = "nav-link">About</a></li>
+          <li class = "top-nav_items"><a href="contact.html" class = "nav-link">Contact</a></li>
+          <li class = "top-nav_items"><a href="AlexCabral_Resume.pdf" class = "nav-link">Résumé</a></li>
+          <li class = "top-nav_items"><a href="https://www.linkedin.com/in/alex-cabral-720b73135/" class = "nav-link">LinkedIn</a></li>
         </ul>
       </center>
     </nav>
+
     <div class="intro">
       <center>
-      <h1>About</h1>
-      <img class = "profile" src = "AlexCabralHeadshot.jpeg" alt="Headshot of Alex Cabral standing outside in front of greenery."></img>
-      <p>I'm a UX Researcher with a background in cognitive science and Human-Computer Interaction research. Most recently I led user research on the <a href="https://benetech.org/labs/"> Benetech Labs' Team </a> and its projects. I also do consulting with smaller startups.</p>
-      <p>Prior to Benetech, I conducted research with the <a href="https://reco.sites.ucsc.edu/"> Human-Robot Interaction Lab </a> and <a href = "https://assist.soe.ucsc.edu/"> ASSIST Lab </a> at the University of California, Santa Cruz (UCSC). </p>
-      </center>
+      <p>
+        I am a UX Researcher on the Cloud Native Experiences team for Microsoft Azure, currently specializing in Linux and Open Source projects.
+      </p>
+      <p>
+        My expertise is in accessibility, and I previously led research for new projects on Benetech's Labs team, a nonprofit focused on bridging 
+        the gap between people and technologies. Most known for Bookshare, the world's largest library of ebooks for people with
+        reading disabilities, Benetech works to bridge the gap between people and technology.
+        <p>I was previously active in / am currently involved in the DIAGRAM Center.</p>
+      </p>
+      <p> 
+        I received my Bachelor's degree from the University of California, Santa Cruz (UCSC) in 2018 in Cogntive Science, with a focus on Human-Computer Interaction (HCI) and Artificial Intelligence (AI).
+        <p> 
+          I was a member of the ASSIST Lab, the Re-Embodied Cognition lab, and the Cognitive Modelling Lab. I was mentored by Leila Takayama and Sri Kurniawan.
+        </p>
+        <p>I received first place in ASSETS ACM Student Research Competition and am published in the 2018 journal proceedings for my work on using telepresence robots to improve museum access for people with developmental disabilities.</p>
+      </p>
     </div>
-    <div>
 
-    </div>
+    <!-- consider: little icons. e.g. first place is a trophy, member of labs is an office building, degree is a degree icon / cert icon, etc -->
+
+    </center>
+
   </body>
 
 </html>
