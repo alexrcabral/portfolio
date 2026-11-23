@@ -175,6 +175,11 @@
 
   .intro {
     margin: 0% 10% 0% 10%;
+    padding: 2% 0% 0% 0%;  /*top right bottom left */ 
+  }
+
+  .about {
+    margin: 0% 10% 0% 10%;
     padding: 5% 0% 0% 0%;  /*top right bottom left */ 
   }
 
