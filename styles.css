@@ -175,7 +175,7 @@
 
   .intro {
     margin: 0% 10% 0% 10%;
-    padding: 1% 0%;
+    padding: 5% 0% 0% 0%;  /*top right bottom left */ 
   }
 
 
